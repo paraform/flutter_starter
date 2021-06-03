@@ -19,6 +19,14 @@ class HomeViewModel extends BaseViewModel {
     _navigationService.navigateTo(Routes.nonReactiveView);
   }
 
+  void navigateToDarkLightTheme() {
+    _navigationService.navigateTo(Routes.darkLightView);
+  }
+
+  void navigateToMultiTheme() {
+    _navigationService.navigateTo(Routes.multipleThemesView);
+  }
+
   void initialise() {
     log.i('initialise');
     title = 'initialised';

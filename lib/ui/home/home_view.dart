@@ -30,6 +30,14 @@ class HomeView extends StatelessWidget {
                   WidgetTwo(id: 2),
                 ],
               ),
+              ElevatedButton(
+                onPressed: viewModel.navigateToDarkLightTheme,
+                child: const Text('Dark/Light Theme'),
+              ),
+              ElevatedButton(
+                onPressed: viewModel.navigateToMultiTheme,
+                child: const Text('Multi Theme'),
+              ),
             ],
           ),
         ),

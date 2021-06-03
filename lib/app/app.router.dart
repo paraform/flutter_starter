@@ -11,9 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 
 import '../ui/bottom_nav/bottom_nav_example.dart';
+import '../ui/dark_light/dark_light_view.dart';
 import '../ui/details/details_view.dart';
 import '../ui/form/example_form_view.dart';
 import '../ui/home/home_view.dart';
+import '../ui/multiple_themes/multiple_themes_view.dart';
 import '../ui/nonreactive/nonreactive_view.dart';
 import '../ui/stream_view/stream_counter_view.dart';
 
@@ -23,6 +25,8 @@ class Routes {
   static const String streamCounterView = '/stream-counter-view';
   static const String detailsView = '/details-view';
   static const String exampleFormView = '/example-form-view';
+  static const String darkLightView = '/dark-light-view';
+  static const String multipleThemesView = '/multiple-themes-view';
   static const String nonReactiveView = '/non-reactive-view';
   static const all = <String>{
     homeView,
@@ -30,6 +34,8 @@ class Routes {
     streamCounterView,
     detailsView,
     exampleFormView,
+    darkLightView,
+    multipleThemesView,
     nonReactiveView,
   };
 }
@@ -43,6 +49,8 @@ class StackedRouter extends RouterBase {
     RouteDef(Routes.streamCounterView, page: StreamCounterView),
     RouteDef(Routes.detailsView, page: DetailsView),
     RouteDef(Routes.exampleFormView, page: ExampleFormView),
+    RouteDef(Routes.darkLightView, page: DarkLightView),
+    RouteDef(Routes.multipleThemesView, page: MultipleThemesView),
     RouteDef(Routes.nonReactiveView, page: NonReactiveView),
   ];
   @override
@@ -82,6 +90,18 @@ class StackedRouter extends RouterBase {
       );
       return MaterialPageRoute<dynamic>(
         builder: (context) => ExampleFormView(key: args.key),
+        settings: data,
+      );
+    },
+    DarkLightView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const DarkLightView(),
+        settings: data,
+      );
+    },
+    MultipleThemesView: (data) {
+      return MaterialPageRoute<dynamic>(
+        builder: (context) => const MultipleThemesView(),
         settings: data,
       );
     },
